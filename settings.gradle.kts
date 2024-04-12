@@ -22,4 +22,4 @@ dependencyResolutionManagement {
 rootProject.name = "HackerNewsCompose"
 include(":app")
 include(":modules:models")
-// project(":models").projectDir = file("./modules/models")
+include(":modules:api")

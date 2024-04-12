@@ -1,7 +1,6 @@
 plugins {
   id("java-library")
   alias(libs.plugins.jetbrainsKotlinJvm)
-  alias(libs.plugins.googleKsp)
 }
 
 java {
@@ -10,8 +9,7 @@ java {
 }
 
 dependencies {
+  implementation(project(":modules:models"))
   implementation(libs.retrofit2)
   implementation(libs.moshi)
-  ksp(libs.moshi.codegen)
-  testImplementation(libs.junit)
 }
