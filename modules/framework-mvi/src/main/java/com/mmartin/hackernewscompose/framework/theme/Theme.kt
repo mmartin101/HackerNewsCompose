@@ -1,4 +1,4 @@
-package com.mmartin.hackernewscompose.ui.theme
+package com.mmartin.hackernewscompose.framework.theme
 
 import android.app.Activity
 import android.os.Build
@@ -13,6 +13,7 @@ import androidx.compose.runtime.SideEffect
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
+import androidx.compose.ui.text.TextStyle
 import androidx.core.view.WindowCompat
 
 private val DarkColorScheme = darkColorScheme(
@@ -24,7 +25,8 @@ private val DarkColorScheme = darkColorScheme(
 private val LightColorScheme = lightColorScheme(
   primary = Purple40,
   secondary = PurpleGrey40,
-  tertiary = Pink40
+  tertiary = Pink40,
+  background = Grey100
 
   /* Other default colors to override
     background = Color(0xFFFFFBFE),

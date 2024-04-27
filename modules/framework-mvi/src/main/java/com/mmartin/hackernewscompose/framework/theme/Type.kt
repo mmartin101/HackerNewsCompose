@@ -1,4 +1,4 @@
-package com.mmartin.hackernewscompose.ui.theme
+package com.mmartin.hackernewscompose.framework.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
@@ -31,4 +31,18 @@ val Typography = Typography(
         letterSpacing = 0.5.sp
     )
     */
+)
+
+val NewsItemPrimaryTextStyle = TextStyle(
+  fontFamily = FontFamily.Default,
+  fontWeight = FontWeight.Normal,
+  fontSize = 14.sp,
+  lineHeight = 24.sp,
+  letterSpacing = 0.5.sp
+)
+
+val NewsItemSecondaryTextStyle = TextStyle(
+  color = Grey828282,
+  fontFamily = FontFamily.SansSerif,
+  fontSize = 12.sp
 )

@@ -9,14 +9,14 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import com.mmartin.hackernewscompose.framework.MviView
+import com.mmartin.hackernewscompose.framework.theme.HackerNewsComposeTheme
 import com.mmartin.hackernewscompose.newsfeed.presenter.NewsFeedEvent
 import com.mmartin.hackernewscompose.newsfeed.presenter.NewsFeedState
-import com.mmartin.hackernewscompose.ui.theme.HackerNewsComposeTheme
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableSharedFlow
 
@@ -41,7 +41,7 @@ class NewsFeedView @JvmOverloads constructor(
     } else {
       state ?: return
     }
-    // val scope = rememberCoroutineScope()
+    val scope = rememberCoroutineScope()
 
     HackerNewsComposeTheme {
       NewsFeedViewComposable(state = state)
@@ -53,13 +53,12 @@ class NewsFeedView @JvmOverloads constructor(
 fun NewsFeedViewComposable(state: NewsFeedState) {
   Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
     Text(
-      color = Color.Black,
       text = if (state.loading) "feed is loading" else "show feed items"
     )
   }
 }
 
-@Preview(showBackground = true)
+@Preview
 @Composable
 fun NewsFeedViewPreview() {
   HackerNewsComposeTheme {
