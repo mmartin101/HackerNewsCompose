@@ -5,7 +5,7 @@ import com.mmartin.hackernewscompose.models.network.UserResponse
 import retrofit2.http.GET
 import retrofit2.http.Path
 
-interface HackerNewsAPI {
+interface HackerNewsApi {
   @GET("v0/topstories.json")
   suspend fun topStories(): List<Long>
 

@@ -1,6 +1,7 @@
 plugins {
   id("java-library")
   alias(libs.plugins.jetbrainsKotlinJvm)
+  alias(libs.plugins.googleKsp)
 }
 
 java {
@@ -10,6 +11,11 @@ java {
 
 dependencies {
   implementation(project(":modules:models"))
-  implementation(libs.retrofit2)
-  implementation(libs.moshi)
+  api(libs.retrofit2)
+  implementation(libs.retrofit2.converter.moshi)
+  api(libs.moshi)
+  api(libs.okhttp)
+  implementation(libs.okhttp.logging.interceptor)
+  implementation(libs.dagger)
+  ksp(libs.dagger.compiler)
 }

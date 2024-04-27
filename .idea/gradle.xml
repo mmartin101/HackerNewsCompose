@@ -10,6 +10,12 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/modules" />
+            <option value="$PROJECT_DIR$/modules/api" />
+            <option value="$PROJECT_DIR$/modules/framework-mvi" />
+            <option value="$PROJECT_DIR$/modules/models" />
+            <option value="$PROJECT_DIR$/modules/newsfeed" />
+            <option value="$PROJECT_DIR$/modules/repository" />
           </set>
         </option>
         <option name="resolveExternalAnnotations" value="false" />
