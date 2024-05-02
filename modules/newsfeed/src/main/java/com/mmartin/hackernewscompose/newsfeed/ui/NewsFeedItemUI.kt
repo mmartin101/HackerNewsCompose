@@ -57,14 +57,20 @@ fun NewsFeedListItem(newsItem: NewsItem) {
           newsItem.time * 1000,
           now,
           DateUtils.MINUTE_IN_MILLIS
-        ).toString()
+        ).toString(),
+        modifier = Modifier.padding(end = 3.dp)
+      )
+      val commentText = if (newsItem.descendants > 0) {
+        pluralStringResource(id = R.plurals.comments, newsItem.descendants, newsItem.descendants)
+      } else {
+        stringResource(id = R.string.discuss)
+      }
+      Text(
+        style = NewsItemSecondaryTextStyle,
+        text = "| $commentText"
       )
     }
   }
-}
-
-private fun LocalDateTime.toMillis(): Long {
-  return atZone(ZoneId.systemDefault()).toEpochSecond() * 1000
 }
 
 @Preview(showBackground = true)

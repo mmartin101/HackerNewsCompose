@@ -3,12 +3,12 @@
   <string name="by_author">by %s</string>
   <string name="hide">hide</string>
   <string name="discuss">discuss</string>
+
   <plurals name="points">
     <item quantity="one">point</item>
     <item quantity="other">%1$d points</item>
   </plurals>
   <plurals name="comments">
-    <item quantity="zero">discuss</item>
     <item quantity="one">%1$d comment</item>
     <item quantity="other">%1$d comments</item>
   </plurals>
