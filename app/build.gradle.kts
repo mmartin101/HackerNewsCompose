@@ -1,10 +1,8 @@
-import org.gradle.configurationcache.extensions.capitalized
-import org.jetbrains.kotlin.gradle.tasks.AbstractKotlinCompileTool
-
 plugins {
   alias(libs.plugins.androidApplication)
   alias(libs.plugins.jetbrainsKotlinAndroid)
   alias(libs.plugins.googleKsp)
+  alias(libs.plugins.googleServices)
 }
 
 android {
@@ -66,6 +64,7 @@ dependencies {
   implementation(libs.androidx.material3)
   implementation(libs.dagger)
   ksp(libs.dagger.compiler)
+  implementation(libs.timber)
   testImplementation(libs.junit)
   androidTestImplementation(libs.androidx.junit)
   androidTestImplementation(libs.androidx.espresso.core)

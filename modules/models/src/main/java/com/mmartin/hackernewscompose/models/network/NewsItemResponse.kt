@@ -9,7 +9,7 @@ data class NewsItemResponse(
   val isDeleted: Boolean = false,
   val type: String?,
   val by: String?,
-  val time: LocalDateTime?,
+  val time: Long?,
   val parent: Long = 0,
   val poll: Long = 0,
   val kids: List<Long> = emptyList(),

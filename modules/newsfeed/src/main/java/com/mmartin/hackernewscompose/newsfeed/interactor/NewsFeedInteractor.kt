@@ -1,16 +1,18 @@
 package com.mmartin.hackernewscompose.newsfeed.interactor
 
-import com.mmartin.hackernewscompose.api.NetworkModule
+import android.text.format.DateUtils
 import com.mmartin.hackernewscompose.models.NewsItem
 import com.mmartin.hackernewscompose.repository.NewsFeedDataRepository
-import com.mmartin.hackernewscompose.repository.NewsFeedRepository
-import dagger.Module
-import dagger.Provides
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 class NewsFeedInteractor @Inject constructor(private val newsFeedRepository: NewsFeedDataRepository) {
-  //TODO: Add paging functionality
-  suspend fun topStories(): List<NewsItem> {
-    return newsFeedRepository.topStories(0)
+
+  suspend fun topStories(page: Int): List<NewsItem> {
+    return withContext(Dispatchers.IO) {
+      val ids = newsFeedRepository.topStories()
+      newsFeedRepository.items(ids.subList(0, 50))
+    }
   }
 }

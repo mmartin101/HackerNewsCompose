@@ -10,25 +10,16 @@ import java.time.ZoneId
 
 class NewsFeedRemoteRepository(private val api: HackerNewsApi) :
   NewsFeedRepository {
-  override suspend fun topStories(page: Int): List<NewsItem> {
-    return api.topStories()
-      .map { id -> id.toString() }
-      .take(30)
-      .map { id -> api.getItem(id) }
-      .map { response -> response.toNewsItem() }
-  }
 
   private fun NewsItemResponse.toNewsItem(): NewsItem {
     return NewsItem(
       id = id,
-      isDeleted = isDeleted,
       type = type?.toNewsItemClassification() ?: UNKNOWN,
       by = by ?: "",
-      time = time ?: LocalDateTime.now().atZone(ZoneId.systemDefault()).toLocalDateTime(),
+      time = time ?: 0L,
       parent = parent,
-      poll = poll,
       kids = kids,
-      url = url,
+      url = url ?: "",
       score = score,
       title = title ?: "",
       parts = parts,
@@ -38,6 +29,16 @@ class NewsFeedRemoteRepository(private val api: HackerNewsApi) :
 
   private fun String.toNewsItemClassification(): NewsItemClassification {
     return NewsItemClassification.parse(this)
+  }
+
+  override suspend fun topStories(): List<Long> {
+    return api.topStories()
+  }
+
+  override suspend fun items(page: List<Long>): List<NewsItem> {
+    return page.take(30)
+      .map { id -> api.getItem(id.toString()) }
+      .map { response -> response.toNewsItem() }
   }
 
   override suspend fun invalidate() {

@@ -1,11 +1,9 @@
 package com.mmartin.hackernewscompose.repository
 
-import android.content.Context
 import androidx.room.Room
-import androidx.test.core.app.ApplicationProvider
 import androidx.test.platform.app.InstrumentationRegistry
 import com.mmartin.hackernewscompose.repository.db.AppDatabase
-import com.mmartin.hackernewscompose.repository.db.NewsItemDBModel
+import com.mmartin.hackernewscompose.repository.db.models.NewsItemDBModel
 import org.junit.Test
 
 import org.junit.Assert.*
