@@ -5,8 +5,7 @@ import com.mmartin.hackernewscompose.models.NewsItem
 import com.mmartin.hackernewscompose.models.NewsItemClassification
 import com.mmartin.hackernewscompose.models.NewsItemClassification.UNKNOWN
 import com.mmartin.hackernewscompose.models.network.NewsItemResponse
-import java.time.LocalDateTime
-import java.time.ZoneId
+import com.mmartin.hackernewscompose.repository.db.models.StoriesList
 
 class NewsFeedRemoteRepository(private val api: HackerNewsApi) :
   NewsFeedRepository {
@@ -31,8 +30,12 @@ class NewsFeedRemoteRepository(private val api: HackerNewsApi) :
     return NewsItemClassification.parse(this)
   }
 
-  override suspend fun topStories(): List<Long> {
-    return api.topStories()
+  override suspend fun topStories(): StoriesList {
+    return StoriesList(
+      type = "top",
+      storyIds = api.topStories(),
+      timeStamp = System.currentTimeMillis()
+    )
   }
 
   override suspend fun items(page: List<Long>): List<NewsItem> {

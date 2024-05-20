@@ -24,12 +24,13 @@ android {
 
   buildTypes {
     release {
-      isMinifyEnabled = false
+      isMinifyEnabled = true
+      isShrinkResources = true
       proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+      signingConfig = signingConfigs.getByName("debug")
     }
   }
   compileOptions {
-    isCoreLibraryDesugaringEnabled = true
     sourceCompatibility = JavaVersion.VERSION_17
     targetCompatibility = JavaVersion.VERSION_17
   }
@@ -51,9 +52,9 @@ android {
 
 dependencies {
   implementation(project(":modules:models"))
-  implementation(project(":modules:newsfeed"))
+  implementation(project(":modules:newsfeed:newsfeed-mvi"))
+  implementation(project(":modules:newsfeed:newsfeed-mvvm"))
 
-  coreLibraryDesugaring(libs.desugar.jdk.libs)
   implementation(libs.androidx.core.ktx)
   implementation(libs.androidx.lifecycle.runtime.ktx)
   implementation(libs.androidx.activity.compose)

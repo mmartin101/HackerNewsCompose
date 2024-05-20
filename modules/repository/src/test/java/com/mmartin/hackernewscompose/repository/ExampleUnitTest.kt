@@ -4,6 +4,7 @@ import androidx.room.Room
 import androidx.test.platform.app.InstrumentationRegistry
 import com.mmartin.hackernewscompose.repository.db.AppDatabase
 import com.mmartin.hackernewscompose.repository.db.models.NewsItemDBModel
+import kotlinx.coroutines.runBlocking
 import org.junit.Test
 
 import org.junit.Assert.*
@@ -22,15 +23,17 @@ class ExampleUnitTest {
     val dao = db.newsItemDao()
     val item = NewsItemDBModel(
       id = 1L,
-      type = 1,
+      type = "",
       by = "",
-      time = "",
+      time = 0L,
       title = "",
       url = ""
       )
-    dao.insertAll(item)
+    runBlocking {
+      dao.insertAll(listOf(item))
 
-    val results = dao.getAll()
-    assertEquals(1, results.size)
+      val results = dao.getItems()
+      assertEquals(1, results.size)
+    }
   }
 }
