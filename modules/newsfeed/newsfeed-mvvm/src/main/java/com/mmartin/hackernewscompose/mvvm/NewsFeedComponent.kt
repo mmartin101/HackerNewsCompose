@@ -2,6 +2,7 @@ package com.mmartin.hackernewscompose.mvvm
 
 import android.content.Context
 import com.mmartin.hackernewscompose.api.NetworkModule
+import com.mmartin.hackernewscompose.mvvm.viewmodel.NewsFeedViewModel
 import com.mmartin.hackernewscompose.repository.RepositoryModule
 import dagger.BindsInstance
 import dagger.Component
@@ -10,6 +11,7 @@ import dagger.Component
   modules = [NetworkModule::class, RepositoryModule::class]
 )
 interface NewsFeedComponent {
+
   fun createViewModel(): NewsFeedViewModel
 
   @Component.Factory

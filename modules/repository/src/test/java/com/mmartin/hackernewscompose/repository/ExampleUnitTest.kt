@@ -30,7 +30,7 @@ class ExampleUnitTest {
       url = ""
       )
     runBlocking {
-      dao.insertAll(listOf(item))
+      dao.upsertAll(listOf(item))
 
       val results = dao.getItems()
       assertEquals(1, results.size)

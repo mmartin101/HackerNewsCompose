@@ -17,7 +17,7 @@ android {
 
   buildTypes {
     release {
-      isMinifyEnabled = false
+      isMinifyEnabled = true
       proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
     }
   }
@@ -44,6 +44,7 @@ dependencies {
   implementation(project(":modules:repository"))
   implementation(libs.androidx.core.ktx)
   implementation(libs.androidx.appcompat)
+  implementation(libs.androidx.lifecycle.runtime)
   implementation(libs.androidx.lifecycle.runtime.ktx)
   implementation(libs.androidx.lifecycle.runtime.compose)
   implementation(libs.androidx.activity.compose)

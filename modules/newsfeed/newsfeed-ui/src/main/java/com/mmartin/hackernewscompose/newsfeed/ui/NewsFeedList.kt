@@ -52,7 +52,10 @@ fun NewsFeedList(
         contentPadding = PaddingValues(horizontal = 8.dp, vertical = 4.dp),
         verticalArrangement = Arrangement.spacedBy(4.dp)
       ) {
-        items(newsItems) { item ->
+        items(
+          key = { newsItem -> newsItem.id },
+          items = newsItems
+        ) { item ->
           NewsFeedListItem(newsItem = item)
         }
       }

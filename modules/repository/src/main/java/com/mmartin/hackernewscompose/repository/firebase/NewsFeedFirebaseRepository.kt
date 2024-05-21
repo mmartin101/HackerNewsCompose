@@ -1,7 +1,6 @@
 package com.mmartin.hackernewscompose.repository.firebase
 
 import com.google.firebase.Firebase
-import com.google.firebase.database.GenericTypeIndicator
 import com.google.firebase.database.database
 import com.google.firebase.database.getValue
 import com.mmartin.hackernewscompose.models.NewsItem
@@ -15,7 +14,8 @@ import timber.log.Timber
 class NewsFeedFirebaseRepository : NewsFeedRepository {
   val db = Firebase.database("https://hacker-news.firebaseio.com/")
   override suspend fun topStories(): StoriesList {
-    val ids = db.getReference("/v0/topstories").get().await().children.map { it.getValue(TypeIndicator) }
+    val typeIndicator = TypeIndicator()
+    val ids = db.getReference("/v0/topstories").get().await().children.map { it.getValue(typeIndicator) }
     return StoriesList(
       type = "top",
       storyIds = ids as List<Long> ?: emptyList(),
@@ -62,4 +62,3 @@ class NewsFeedFirebaseRepository : NewsFeedRepository {
   }
 }
 
-object TypeIndicator : GenericTypeIndicator<Long>() {}
