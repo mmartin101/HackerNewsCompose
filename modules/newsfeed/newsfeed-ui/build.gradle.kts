@@ -37,7 +37,7 @@ android {
 
 dependencies {
   implementation(project(":modules:models"))
-  implementation(project(":modules:framework-mvi"))
+  implementation(project(":modules:common"))
 
   implementation(libs.androidx.core.ktx)
   implementation(libs.androidx.appcompat)

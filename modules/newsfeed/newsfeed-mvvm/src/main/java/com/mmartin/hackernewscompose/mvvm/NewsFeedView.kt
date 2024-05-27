@@ -9,7 +9,6 @@ import com.mmartin.hackernewscompose.newsfeed.ui.NewsFeedList
 @Composable
 fun NewsFeedView(viewModel: NewsFeedViewModel) {
   val state by viewModel.state.collectAsStateWithLifecycle()
-  viewModel.loadNewsFeed()
   NewsFeedList(
     loading = state.loading,
     newsItems = state.newsItems,

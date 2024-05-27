@@ -38,7 +38,7 @@ android {
 
 dependencies {
   implementation(project(":modules:api"))
-  implementation(project(":modules:framework-mvi"))
+  implementation(project(":modules:common"))
   implementation(project(":modules:models"))
   implementation(project(":modules:newsfeed:newsfeed-ui"))
   implementation(project(":modules:repository"))

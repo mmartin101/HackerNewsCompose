@@ -12,10 +12,9 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/modules" />
             <option value="$PROJECT_DIR$/modules/api" />
-            <option value="$PROJECT_DIR$/modules/framework-mvi" />
+            <option value="$PROJECT_DIR$/modules/common" />
             <option value="$PROJECT_DIR$/modules/models" />
             <option value="$PROJECT_DIR$/modules/newsfeed" />
-            <option value="$PROJECT_DIR$/modules/newsfeed/newsfeed-mvi" />
             <option value="$PROJECT_DIR$/modules/newsfeed/newsfeed-mvvm" />
             <option value="$PROJECT_DIR$/modules/newsfeed/newsfeed-ui" />
             <option value="$PROJECT_DIR$/modules/repository" />

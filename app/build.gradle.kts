@@ -52,7 +52,6 @@ android {
 
 dependencies {
   implementation(project(":modules:models"))
-  implementation(project(":modules:newsfeed:newsfeed-mvi"))
   implementation(project(":modules:newsfeed:newsfeed-mvvm"))
 
   implementation(libs.androidx.core.ktx)

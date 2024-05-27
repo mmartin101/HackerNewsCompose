@@ -14,7 +14,7 @@ import kotlinx.coroutines.launch
 import timber.log.Timber
 import javax.inject.Inject
 
-class NewsFeedViewModel @Inject constructor(val newsFeedRepository: NewsFeedDataRepository): ViewModel() {
+class NewsFeedViewModel @Inject constructor(private val newsFeedRepository: NewsFeedDataRepository): ViewModel() {
 
   private val _state = MutableStateFlow(NewsFeedState())
   val state = _state.asStateFlow()

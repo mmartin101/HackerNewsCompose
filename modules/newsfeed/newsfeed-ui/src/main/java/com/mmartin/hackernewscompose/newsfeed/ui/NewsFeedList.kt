@@ -21,9 +21,9 @@ import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.mmartin.hackernewscompose.framework.theme.HackerNewsComposeTheme
-import com.mmartin.hackernewscompose.framework.theme.NewsItemPrimaryTextStyle
-import com.mmartin.hackernewscompose.framework.theme.NewsItemSecondaryTextStyle
+import com.mmartin.hackernewscompose.common.theme.AppTheme
+import com.mmartin.hackernewscompose.common.theme.NewsItemPrimaryTextStyle
+import com.mmartin.hackernewscompose.common.theme.NewsItemSecondaryTextStyle
 import com.mmartin.hackernewscompose.models.NewsItem
 import com.mmartin.hackernewscompose.models.NewsItemClassification.STORY
 import kotlin.random.Random
@@ -122,7 +122,7 @@ fun NewsFeedListItem(newsItem: NewsItem) {
 fun NewsFeedViewPreview() {
   val random = Random(845654)
   val now = System.currentTimeMillis().div(1000)
-  HackerNewsComposeTheme {
+  AppTheme {
     NewsFeedList(
       loading = false,
       listOf(
@@ -136,7 +136,7 @@ fun NewsFeedViewPreview() {
           score = random.nextInt(1000)
         ),
         NewsItem(
-          id = 999999L,
+          id = 99999L,
           type = STORY,
           by = "squid_pudding",
           time = now.minus(random.nextLong(40).times(60)),
@@ -145,7 +145,7 @@ fun NewsFeedViewPreview() {
           score = random.nextInt(1000)
         ),
         NewsItem(
-          id = 999999L,
+          id = 9999L,
           type = STORY,
           by = "squid_pudding",
           time = now.minus(random.nextLong(40).times(60)),
@@ -154,7 +154,7 @@ fun NewsFeedViewPreview() {
           score = random.nextInt(1000)
         ),
         NewsItem(
-          id = 999999L,
+          id = 999L,
           type = STORY,
           by = "squid_pudding",
           time = now.minus(random.nextLong(40).times(60)),
@@ -163,7 +163,7 @@ fun NewsFeedViewPreview() {
           score = random.nextInt(1000)
         ),
         NewsItem(
-          id = 999999L,
+          id = 99L,
           type = STORY,
           by = "squid_pudding",
           time = now.minus(random.nextLong(240).times(60)),
@@ -172,7 +172,7 @@ fun NewsFeedViewPreview() {
           score = random.nextInt(1000)
         ),
         NewsItem(
-          id = 999999L,
+          id = 9L,
           type = STORY,
           by = "squid_pudding",
           time = now.minus(random.nextLong(240).times(60)),
@@ -181,7 +181,7 @@ fun NewsFeedViewPreview() {
           score = random.nextInt(1000)
         ),
         NewsItem(
-          id = 999999L,
+          id = 98L,
           type = STORY,
           by = "squid_pudding",
           time = now.minus(random.nextLong(240).times(60)),
@@ -190,7 +190,7 @@ fun NewsFeedViewPreview() {
           score = random.nextInt(1000)
         ),
         NewsItem(
-          id = 999999L,
+          id = 9999991L,
           type = STORY,
           by = "squid_pudding",
           time = now.minus(random.nextLong(240).times(60)),
