@@ -14,11 +14,15 @@ import timber.log.Timber
 class NewsFeedFirebaseRepository : NewsFeedRepository {
   val db = Firebase.database("https://hacker-news.firebaseio.com/")
   override suspend fun topStories(): StoriesList {
-    val typeIndicator = TypeIndicator()
-    val ids = db.getReference("/v0/topstories").get().await().children.map { it.getValue(typeIndicator) }
+
+    val ids = db.getReference("/v0/topstories")
+      .get()
+      .await()
+      .getValue(typeIndicator<List<Long>>())
+
     return StoriesList(
       type = "top",
-      storyIds = ids as List<Long> ?: emptyList(),
+      storyIds = ids as List<Long>,
       timeStamp = System.currentTimeMillis()
     )
   }

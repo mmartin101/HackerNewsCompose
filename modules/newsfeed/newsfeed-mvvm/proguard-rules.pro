@@ -19,4 +19,5 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
--keep class com.mmartin.hackernewscompose.mvvm.NewsFeedMvvmActivity{*;}
+-keep class com.mmartin.hackernewscompose.mvvm.** {*;}
+-dontwarn java.lang.invoke.StringConcatFactory
