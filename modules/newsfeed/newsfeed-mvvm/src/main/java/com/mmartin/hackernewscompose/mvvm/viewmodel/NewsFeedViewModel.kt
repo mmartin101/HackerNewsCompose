@@ -14,15 +14,16 @@ import kotlinx.coroutines.launch
 import timber.log.Timber
 import javax.inject.Inject
 
-class NewsFeedViewModel @Inject constructor(private val newsFeedRepository: NewsFeedDataRepository): ViewModel() {
-
+class NewsFeedViewModel @Inject constructor(
+  private val newsFeedRepository: NewsFeedDataRepository
+): ViewModel() {
   private val _state = MutableStateFlow(NewsFeedState())
   val state = _state.asStateFlow()
 
-  // TODO implement paging
   fun loadNewsFeed() {
     viewModelScope.launch {
       val stories = newsFeedRepository.topStories()
+      // TODO implement paging
       val newsItems = newsFeedRepository.items(stories.storyIds.subList(0, 100))
       _state.value = NewsFeedState(false, newsItems)
     }
@@ -32,7 +33,7 @@ class NewsFeedViewModel @Inject constructor(private val newsFeedRepository: News
     when (event) {
       is LoadNewsFeed -> loadNewsFeed()
       is OpenNewsItemUrl -> Timber.w("TODO: implement open url")
-      ShowNewsItemDetail -> Timber.w("TODO: implement show detail")
+      is ShowNewsItemDetail -> Timber.w("TODO: implement show detail")
     }
   }
 

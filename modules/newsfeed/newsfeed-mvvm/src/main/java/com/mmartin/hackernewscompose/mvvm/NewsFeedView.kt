@@ -14,12 +14,12 @@ fun NewsFeedView(viewModel: NewsFeedViewModel) {
     newsItems = state.newsItems,
     onTapAction = { newsItem ->
       val event = if (newsItem.url.isEmpty()) {
-        NewsFeedEvent.ShowNewsItemDetail
+        NewsFeedEvent.ShowNewsItemDetail(newsItem.id)
       } else {
         NewsFeedEvent.OpenNewsItemUrl(newsItem.id, newsItem.url)
       }
       viewModel.onEvent(event)
     },
-    onTapCommentsAction = { newsItem -> viewModel.onEvent(NewsFeedEvent.ShowNewsItemDetail) }
+    onTapCommentsAction = { newsItem -> viewModel.onEvent(NewsFeedEvent.ShowNewsItemDetail(newsItem.id)) }
   )
 }
