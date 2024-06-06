@@ -21,6 +21,8 @@
 #-renamesourcefileattribute SourceFile
 
 #-keep class com.google.firebase.database.GenericTypeIndicator{*;}
+-keepattributes Signature
+
 -keep class com.mmartin.hackernewscompose.repository.** {*;}
 -keep class com.mmartin.hackernewscompose.repository.db.models.** {*;}
 -keep class com.mmartin.hackernewscompose.repository.firebase.** {*;}

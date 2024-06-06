@@ -46,6 +46,7 @@ dependencies {
   implementation(platform(libs.firebase.bom))
   implementation(libs.firebase.database)
   implementation(libs.timber)
+  implementation(libs.androidx.paging.runtime)
   testImplementation(libs.junit)
   androidTestImplementation(libs.androidx.junit)
   androidTestImplementation(libs.androidx.espresso.core)
