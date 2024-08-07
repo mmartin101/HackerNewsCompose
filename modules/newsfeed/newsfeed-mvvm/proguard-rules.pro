@@ -20,4 +20,5 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 -keep class com.mmartin.hackernewscompose.mvvm.** {*;}
+-dontwarn com.mmartin.hackernewscompose.repository.NewsFeedDataRepository
 -dontwarn java.lang.invoke.StringConcatFactory

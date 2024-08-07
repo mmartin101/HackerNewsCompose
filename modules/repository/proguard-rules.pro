@@ -19,11 +19,16 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
-
-#-keep class com.google.firebase.database.GenericTypeIndicator{*;}
+-keep class com.google.firebase.database.GenericTypeIndicator{*;}
 -keepattributes Signature
-
--keep class com.mmartin.hackernewscompose.repository.** {*;}
--keep class com.mmartin.hackernewscompose.repository.db.models.** {*;}
--keep class com.mmartin.hackernewscompose.repository.firebase.** {*;}
 -dontwarn java.lang.invoke.StringConcatFactory
+
+#-dontwarn com.mmartin.hackernewscompose.repository.NewsFeedRepository
+#-dontwarn com.mmartin.hackernewscompose.repository.RepositoryModule
+#-dontwarn com.mmartin.hackernewscompose.repository.RepositoryModule_ProvideCoroutineDispatcherFactory
+#-dontwarn com.mmartin.hackernewscompose.repository.RepositoryModule_ProvideNewsFeedDatabaseRepositoryFactory
+#-dontwarn com.mmartin.hackernewscompose.repository.RepositoryModule_ProvideNewsFeedFirebaseRepositoryFactory
+#-dontwarn com.mmartin.hackernewscompose.repository.RepositoryModule_ProvideNewsFeedRemoteRepositoryFactory
+#-dontwarn com.mmartin.hackernewscompose.repository.RepositoryModule_ProvideNewsItemDaoFactory
+#-dontwarn com.mmartin.hackernewscompose.repository.db.NewsItemDao
+#-dontwarn com.mmartin.hackernewscompose.repository.db.models.StoriesList

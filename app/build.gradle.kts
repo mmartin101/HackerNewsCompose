@@ -38,6 +38,7 @@ android {
     jvmTarget = "17"
   }
   buildFeatures {
+    buildConfig = true
     compose = true
   }
   composeOptions {
@@ -51,6 +52,7 @@ android {
 }
 
 dependencies {
+  implementation(project(":modules:api"))
   implementation(project(":modules:models"))
   implementation(project(":modules:newsfeed:newsfeed-mvvm"))
 
@@ -65,6 +67,8 @@ dependencies {
   implementation(libs.dagger)
   ksp(libs.dagger.compiler)
   implementation(libs.timber)
+  implementation(libs.koin.android)
+
   testImplementation(libs.junit)
   androidTestImplementation(libs.androidx.junit)
   androidTestImplementation(libs.androidx.espresso.core)

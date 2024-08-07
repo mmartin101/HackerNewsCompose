@@ -16,6 +16,6 @@ dependencies {
   api(libs.moshi)
   api(libs.okhttp)
   implementation(libs.okhttp.logging.interceptor)
-  implementation(libs.dagger)
-  ksp(libs.dagger.compiler)
+  implementation(libs.koin)
+  implementation(libs.timber)
 }

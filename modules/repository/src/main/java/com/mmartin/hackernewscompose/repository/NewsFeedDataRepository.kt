@@ -1,8 +1,12 @@
 package com.mmartin.hackernewscompose.repository
 
+import androidx.paging.Pager
+import androidx.paging.PagingConfig
+import androidx.paging.PagingData
 import com.mmartin.hackernewscompose.models.NewsItem
 import com.mmartin.hackernewscompose.repository.db.models.StoriesList
 import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
 import javax.inject.Named
@@ -10,7 +14,6 @@ import javax.inject.Named
 //TODO create separate source set for Remote (google free variant...) vs Firebase
 class NewsFeedDataRepository @Inject constructor(
     @Named("Database") private val db: NewsFeedRepository,
-    @Named("Remote") private val remoteRepository: NewsFeedRepository,
     @Named("Firebase") private val firebase: NewsFeedRepository,
     private val coroutineDispatcher: CoroutineDispatcher
 ) : NewsFeedRepository {
@@ -38,6 +41,12 @@ class NewsFeedDataRepository @Inject constructor(
         val items = firebase.items(page)
         db.saveItems(items)
         return items
+    }
+
+    override fun itemsFlow(): Flow<PagingData<NewsItem>> {
+        return Pager(PagingConfig(30)) {
+            NewsItemPagingSource(db, firebase)
+        }.flow
     }
 
     override suspend fun invalidate() {

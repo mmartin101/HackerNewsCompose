@@ -58,6 +58,8 @@ dependencies {
   implementation(libs.dagger)
   ksp(libs.dagger.compiler)
   implementation(libs.timber)
+  implementation(libs.koin.android)
+
   testImplementation(libs.junit)
   androidTestImplementation(libs.androidx.junit)
   androidTestImplementation(libs.androidx.espresso.core)

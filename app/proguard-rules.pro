@@ -19,3 +19,8 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+-keep class com.mmartin.hackernewscompose.repository.** {*;}
+#-keep class com.mmartin.hackernewscompose.repository.NewsFeedDataRepository {*;}
+-keep class com.mmartin.hackernewscompose.repository.db.models.** {*;}
+-keep class com.mmartin.hackernewscompose.repository.firebase.** {*;}
+-dontwarn com.mmartin.hackernewscompose.repository.NewsFeedDataRepository
