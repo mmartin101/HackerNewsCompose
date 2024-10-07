@@ -1,4 +1,4 @@
-package com.mmartin.hackernewscompose.mvvm
+package com.mmartin.hackernewscompose.presentation
 
 sealed class NewsFeedEvent {
     data object LoadNewsFeed : NewsFeedEvent()

@@ -17,5 +17,4 @@ dependencies {
   api(libs.okhttp)
   implementation(libs.okhttp.logging.interceptor)
   implementation(libs.koin)
-  implementation(libs.timber)
 }

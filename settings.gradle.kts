@@ -23,7 +23,7 @@ rootProject.name = "HackerNewsCompose"
 include(":app")
 include(":modules:models")
 include(":modules:api")
-include(":modules:newsfeed:newsfeed-mvvm")
+include(":modules:newsfeed:newsfeed-presentation")
 include(":modules:newsfeed:newsfeed-ui")
 include(":modules:repository")
 include(":modules:common")

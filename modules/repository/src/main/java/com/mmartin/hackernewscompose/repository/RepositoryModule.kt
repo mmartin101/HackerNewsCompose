@@ -4,13 +4,11 @@ import androidx.room.Room
 import com.mmartin.hackernewscompose.repository.db.AppDatabase
 import com.mmartin.hackernewscompose.repository.db.NewsFeedDatabaseRepository
 import com.mmartin.hackernewscompose.repository.firebase.NewsFeedFirebaseRepository
-import dagger.Module
 import kotlinx.coroutines.Dispatchers
 import org.koin.dsl.module
 
-@Module
 object RepositoryModule {
-    val koinModule = module {
+    val koin = module {
         single {
             NewsFeedDataRepository(
                 db = NewsFeedDatabaseRepository(get()),

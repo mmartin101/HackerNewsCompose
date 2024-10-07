@@ -1,4 +1,4 @@
-package com.mmartin.hackernewscompose.mvvm
+package com.mmartin.hackernewscompose.presentation
 
 import com.mmartin.hackernewscompose.models.NewsItem
 

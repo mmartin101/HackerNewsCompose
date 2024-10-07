@@ -15,7 +15,7 @@
     android:name=".HackerNewsApp"
     tools:targetApi="31">
     <activity
-      android:name=".mvvm.NewsFeedMvvmActivity"
+      android:name=".presentation.NewsFeedMvvmActivity"
       android:exported="true"
       android:label="@string/app_name"
       android:theme="@style/Theme.HackerNewsCompose">

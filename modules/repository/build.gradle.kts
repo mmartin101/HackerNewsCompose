@@ -34,9 +34,7 @@ android {
 dependencies {
   implementation(project(":modules:api"))
   implementation(project(":modules:models"))
-  implementation(libs.dagger)
   implementation(libs.core.ktx)
-  ksp(libs.dagger.compiler)
   implementation(libs.room.runtime)
   implementation(libs.room.ktx)
   ksp(libs.room.compiler)
